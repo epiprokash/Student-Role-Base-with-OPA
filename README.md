@@ -1,1 +1,2 @@
-# Student-Role-Base-with-OPA
+# Student-Role-Base-with-OPA.
+# Open Policy Agent (OPA) is an open-source, general-purpose policy engine that unifies policy enforcement across cloud-native environments by decoupling policy from application logic. It allows you to write policies in a declarative language called Rego and apply them consistently across different services, such as microservices, Kubernetes, CI/CD pipelines, and APIs. OPA makes policy decisions, but the application is responsible for enforcing them. 
