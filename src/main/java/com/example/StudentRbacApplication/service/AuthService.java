@@ -27,8 +27,14 @@ public class AuthService {
         User user = new User();
         user.setUsername(request.getUsername());
         user.setPassword(encoder.encode(request.getPassword()));
-        user.setRole(Role.STUDENT);
-        // Default role is STUDENT
+        
+        // 🔥 FIX: Allow setting role from request (default to STUDENT)
+
+        if (request.getRole() != null) {
+            user.setRole(request.getRole());
+        } else {
+            user.setRole(Role.STUDENT);
+        }
         userRepository.save(user);
         String token = jwtUtil.generateToken(user.getUsername(), user.getRole().name());
         return new AuthResponse(token);
