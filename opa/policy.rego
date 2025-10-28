@@ -32,7 +32,7 @@ visible_fields = fields if {
     fields := ["id", "name", "email"]  # student cannot see 'grade' or 'address'
 }
 
-# editable_fields = fields if {
-#     input.user.role == "STUDENT"
-#     fields := ["email"]  # student can only edit email
-# }
+editable_fields = fields if {
+    input.user.role == "STUDENT"
+    fields := ["email"]  # student can only edit email
+}
